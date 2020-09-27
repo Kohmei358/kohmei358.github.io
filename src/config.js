@@ -11,7 +11,7 @@ module.exports = {
       url: 'https://www.linkedin.com/in/kohmei-kadoya-78363b18b/',
     },
     {
-      name: 'Folder',
+      name: 'Instagram',
       url: 'https://www.youtube.com/channel/UCPQjjXsCa4049JD2j2AXBcw',
     },
   ],

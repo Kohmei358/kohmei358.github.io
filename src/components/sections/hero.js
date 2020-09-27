@@ -49,11 +49,11 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Kohmei Kadoya.</h2>;
-  const three = <h3 className="big-heading">I copy things for the web.</h3>;
+  const three = <h3 className="big-heading">I seemlessly intergrate robotics and software.</h3>;
   const four = (
     <p>
-      I'm a software engineer based in Boston, MA specializing in building (and occasionally
-      designing) exceptional websites, applications, and everything in between.
+      I'm a roboitcs and software engineer based in Worcester, MA specializing in making robots
+      simpler to interact with by creating simple and powerful software.
     </p>
   );
   const five = (
