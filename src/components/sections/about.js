@@ -144,14 +144,14 @@ const About = () => {
             <p>Hello! I'm Kohmei, a robotics engineer based in Worcester, MA.</p>
 
             <p>
-              I enjoy making robot more delightful to interact with. Whether that is by creating
+              I enjoy making robots more delightful to interact with. Whether that is by creating
               more redundant hardware or making powerful software that give instant and continuous
-              feedback to the user, I stive to make complex robotics acessible to everyone.
+              feedback to the user, I strive to make complex robotics accessible to everyone.
             </p>
 
             <p>
               Im a student at <a href="https://www.wpi.edu">Worcester Polytechnic Institutite</a>,
-              where am pursuing a bachelors and a master in Robotics Engineering.
+              where I am pursuing a bachelors and a master in Robotics Engineering.
             </p>
 
             <p>Here are a few technologies I've been working with recently:</p>
