@@ -52,7 +52,7 @@ const Hero = () => {
   const three = <h3 className="big-heading">I seamlessly integrate robotics and software.</h3>;
   const four = (
     <p>
-      I'm a roboitcs and software engineer based in Worcester, MA specializing in making robots
+      I'm a robotics and software engineer based in Worcester, MA specializing in making robots
       simpler to interact with by creating simple and powerful software.
     </p>
   );
