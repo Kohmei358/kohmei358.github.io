@@ -1,9 +1,10 @@
 ---
-date: '1'
+date: '2'
 title: '6-DOF Arm Control Method'
 cover: './demo.png'
 github: 'https://github.com/CommanderBlop/vr-controlled-robotics-arm'
-external: 'https://www.youtube.com/watch?v=7Anm8o7J77Y'
+youtube: 'https://www.youtube.com/watch?v=7Anm8o7J77Y'
+external: 'https://drive.google.com/file/d/1pnLsVJX2hdngnrJbUCaoJxIZdtwql4Tf/view?usp=sharing'
 tech:
   - PyCharm
   - Forwards/Inverse Kinematics
