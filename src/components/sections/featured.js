@@ -307,14 +307,14 @@ const Featured = () => {
                         <Icon name="GitHub" />
                       </a>
                     )}
-                    {external && (
-                      <a href={external} aria-label="External Link">
-                        <Icon name="External" />
-                      </a>
-                    )}
                     {youtube && (
                       <a href={youtube} aria-label="Youtube Link">
                         <Icon name="Instagram" />
+                      </a>
+                    )}
+                    {external && (
+                      <a href={external} aria-label="External Link">
+                        <Icon name="External" />
                       </a>
                     )}
                   </div>
