@@ -14,4 +14,5 @@ showInProjects: true
 ---
 
 A [3-DOF arm](https://github.com/Hephaestus-Arm/HephaestusArm2) that can autonomously sort balls into different color piles.
-Uses state machines to
+Uses state machines to increase reliability which allows for fast and truly autonomous operation.
+A robust computer vision algorithm is used to increase data extraction accuracy.

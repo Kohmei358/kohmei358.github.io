@@ -150,7 +150,7 @@ const About = () => {
             </p>
 
             <p>
-              Im a student at <a href="https://www.wpi.edu">Worcester Polytechnic Institute</a>,
+              I'm a student at <a href="https://www.wpi.edu">Worcester Polytechnic Institute</a>,
               where I am pursuing a bachelors and a master in Robotics Engineering.
             </p>
 
