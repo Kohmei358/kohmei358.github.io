@@ -189,17 +189,18 @@ const StyledProject = styled.div`
 
     a {
       width: 100%;
-      background-color: var(--green);
+      background: transparent;
+      /* background-color: var(--green); */
       border-radius: var(--border-radius);
       vertical-align: middle;
 
       &:hover,
       &:focus {
-        background: transparent;
+        /* background: transparent; */
 
         &:before,
         .img {
-          background: transparent;
+          /* background: transparent; */
           filter: none;
         }
       }
@@ -222,8 +223,8 @@ const StyledProject = styled.div`
 
     .img {
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1) brightness(90%);
+      /* mix-blend-mode: multiply; */
+      /* filter: grayscale(100%) contrast(1) brightness(90%); */
 
       @media (max-width: 768px) {
         object-fit: cover;
@@ -303,17 +304,29 @@ const Featured = () => {
 
                   <div className="project-links">
                     {github && (
-                      <a href={github} aria-label="GitHub Link">
+                      <a
+                        href={github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub Link">
                         <Icon name="GitHub" />
                       </a>
                     )}
                     {youtube && (
-                      <a href={youtube} aria-label="Youtube Link">
+                      <a
+                        href={youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Youtube Link">
                         <Icon name="Instagram" />
                       </a>
                     )}
                     {external && (
-                      <a href={external} aria-label="External Link">
+                      <a
+                        href={external}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="External Link">
                         <Icon name="External" />
                       </a>
                     )}
@@ -321,7 +334,10 @@ const Featured = () => {
                 </div>
 
                 <div className="project-image">
-                  <a href={external ? external : github ? github : '#'}>
+                  <a
+                    href={external ? external : github ? github : '#'}
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <Img fluid={cover.childImageSharp.fluid} alt={title} className="img" />
                   </a>
                 </div>
