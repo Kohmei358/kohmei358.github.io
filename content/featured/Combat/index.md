@@ -1,5 +1,5 @@
 ---
-date: '5'
+date: '4'
 title: 'Combat Robotics'
 cover: './demo.jpg'
 tech:
