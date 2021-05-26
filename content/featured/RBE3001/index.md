@@ -1,7 +1,7 @@
 ---
 date: '5'
 title: 'Automated Ball Sorting Arm'
-cover: './demo.jpg'
+cover: './demo.jpeg'
 youtube: 'https://youtu.be/mX2VU0o5paU'
 external: 'https://docs.google.com/document/d/1JyXDe3kS0x9jvmHUlWbNCs_eQIYWO2e-N3XBIlul7fQ/edit?usp=sharing'
 github: 'https://github.com/Kohmei358/3001-color-ball-sorter'

@@ -1,5 +1,5 @@
 ---
-date: '2'
+date: '1'
 title: 'ASES Global Internship Portal'
 cover: './demo.png'
 github: 'https://github.com/Kohmei358/grip-website'
