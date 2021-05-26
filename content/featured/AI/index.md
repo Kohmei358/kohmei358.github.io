@@ -1,5 +1,5 @@
 ---
-date: '6'
+date: '7'
 title: 'Lyft Motion Prediction Challenge'
 cover: './demo.jpg'
 youtube: 'https://youtu.be/3YEYeSnwGt4'
