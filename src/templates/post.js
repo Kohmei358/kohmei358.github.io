@@ -31,6 +31,23 @@ const StyledPostContent = styled.div`
     line-height: 1.5;
     color: var(--light-slate);
   }
+
+  a {
+    ${({ theme }) => theme.mixins.inlineLink};
+  }
+
+  code {
+    background-color: var(--lightest-navy);
+    color: var(--lightest-slate);
+    border-radius: var(--border-radius);
+    font-size: var(--fz-sm);
+    padding: 0.2em 0.4em;
+  }
+
+  pre code {
+    background-color: transparent;
+    padding: 0;
+  }
 `;
 
 const PostTemplate = ({ data, location }) => {
@@ -82,7 +99,7 @@ PostTemplate.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query ($path: String!) {
     markdownRemark(frontmatter: { slug: { eq: $path } }) {
       html
       frontmatter {

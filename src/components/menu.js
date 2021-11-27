@@ -242,7 +242,12 @@ const Menu = () => {
       </Helmet>
 
       <div ref={wrapperRef}>
-        <StyledHamburgerButton onClick={toggleMenu} menuOpen={menuOpen} ref={buttonRef}>
+        <StyledHamburgerButton
+          onClick={toggleMenu}
+          menuOpen={menuOpen}
+          ref={buttonRef}
+          aria-label="Menu"
+        >
           <div className="ham-box">
             <div className="ham-box-inner" />
           </div>
@@ -254,7 +259,9 @@ const Menu = () => {
               <ol>
                 {navLinks.map(({ url, name }, i) => (
                   <li key={i}>
-                    <Link to={url}>{name}</Link>
+                    <Link to={url} onClick={() => setMenuOpen(false)}>
+                      {name}
+                    </Link>
                   </li>
                 ))}
               </ol>

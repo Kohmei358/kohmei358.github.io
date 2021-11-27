@@ -23,21 +23,21 @@ const StyledSocialList = styled.ul`
   }
 
   li {
-    padding: 10px;
-
     &:last-of-type {
       margin-bottom: 20px;
     }
 
     a {
+      padding: 10px;
+
       &:hover,
       &:focus {
         transform: translateY(-3px);
       }
 
       svg {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
       }
     }
   }
@@ -49,7 +49,7 @@ const Social = ({ isHome }) => (
       {socialMedia &&
         socialMedia.map(({ url, name }, i) => (
           <li key={i}>
-            <a href={url} aria-label={name} target="_blank" rel="noopener noreferrer">
+            <a href={url} aria-label={name} target="_blank" rel="noreferrer">
               <Icon name={name} />
             </a>
           </li>

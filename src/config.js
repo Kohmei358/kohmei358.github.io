@@ -7,12 +7,16 @@ module.exports = {
       url: 'https://github.com/Kohmei358',
     },
     {
+      name: 'Instagram',
+      url: 'https://www.youtube.com/channel/UCPQjjXsCa4049JD2j2AXBcw',
+    },
+    {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/kohmei-kadoya-78363b18b/',
     },
     {
-      name: 'Instagram',
-      url: 'https://www.youtube.com/channel/UCPQjjXsCa4049JD2j2AXBcw',
+      name: 'Codepen',
+      url: 'https://codepen.io/bchiang7',
     },
   ],
 

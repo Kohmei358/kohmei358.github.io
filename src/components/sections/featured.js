@@ -1,16 +1,31 @@
 import React, { useEffect, useRef } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
+import { usePrefersReducedMotion } from '@hooks';
 
-const StyledProject = styled.div`
+const StyledProjectsGrid = styled.ul`
+  ${({ theme }) => theme.mixins.resetList};
+
+  a {
+    position: relative;
+    z-index: 1;
+  }
+`;
+
+const StyledProject = styled.li`
+  position: relative;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
+
+  @media (max-width: 768px) {
+    ${({ theme }) => theme.mixins.boxShadow};
+  }
 
   &:not(:last-of-type) {
     margin-bottom: 100px;
@@ -35,6 +50,7 @@ const StyledProject = styled.div`
       @media (max-width: 768px) {
         grid-column: 1 / -1;
         padding: 40px 40px 30px;
+        text-align: left;
       }
       @media (max-width: 480px) {
         padding: 25px 25px 20px;
@@ -43,11 +59,15 @@ const StyledProject = styled.div`
     .project-tech-list {
       justify-content: flex-end;
 
+      @media (max-width: 768px) {
+        justify-content: flex-start;
+      }
+
       li {
         margin: 0 0 5px 20px;
 
         @media (max-width: 768px) {
-          margin: 0 0 5px 10px;
+          margin: 0 10px 5px 0;
         }
       }
     }
@@ -55,6 +75,12 @@ const StyledProject = styled.div`
       justify-content: flex-end;
       margin-left: 0;
       margin-right: -10px;
+
+      @media (max-width: 768px) {
+        justify-content: flex-start;
+        margin-left: -10px;
+        margin-right: 0;
+      }
     }
     .project-image {
       grid-column: 1 / 8;
@@ -75,6 +101,10 @@ const StyledProject = styled.div`
     }
 
     @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
       grid-column: 1 / -1;
       padding: 40px 40px 30px;
       z-index: 5;
@@ -103,6 +133,21 @@ const StyledProject = styled.div`
 
     @media (max-width: 768px) {
       color: var(--white);
+
+      a {
+        position: static;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+      }
     }
   }
 
@@ -128,6 +173,11 @@ const StyledProject = styled.div`
 
     a {
       ${({ theme }) => theme.mixins.inlineLink};
+    }
+
+    strong {
+      color: var(--white);
+      font-weight: normal;
     }
   }
 
@@ -165,12 +215,28 @@ const StyledProject = styled.div`
     margin-top: 10px;
     margin-left: -10px;
     color: var(--lightest-slate);
+
     a {
+      ${({ theme }) => theme.mixins.flexCenter};
       padding: 10px;
+
+      &.external {
+        svg {
+          width: 22px;
+          height: 22px;
+          margin-top: -4px;
+        }
+      }
+
       svg {
         width: 20px;
         height: 20px;
       }
+    }
+
+    .cta {
+      ${({ theme }) => theme.mixins.smallButton};
+      margin: 10px;
     }
   }
 
@@ -189,18 +255,19 @@ const StyledProject = styled.div`
 
     a {
       width: 100%;
-      background: transparent;
-      /* background-color: var(--green); */
+      height: 100%;
+      background-color: var(--green);
       border-radius: var(--border-radius);
       vertical-align: middle;
 
       &:hover,
       &:focus {
-        /* background: transparent; */
+        background: transparent;
+        outline: 0;
 
         &:before,
         .img {
-          /* background: transparent; */
+          background: transparent;
           filter: none;
         }
       }
@@ -223,14 +290,14 @@ const StyledProject = styled.div`
 
     .img {
       border-radius: var(--border-radius);
-      /* mix-blend-mode: multiply; */
-      /* filter: grayscale(100%) contrast(1) brightness(90%); */
+      mix-blend-mode: multiply;
+      filter: grayscale(100%) contrast(1) brightness(90%);
 
       @media (max-width: 768px) {
         object-fit: cover;
         width: auto;
         height: 100%;
-        filter: grayscale(100%) contrast(1) brightness(80%);
+        filter: grayscale(100%) contrast(1) brightness(50%);
       }
     }
   }
@@ -238,10 +305,10 @@ const StyledProject = styled.div`
 
 const Featured = () => {
   const data = useStaticQuery(graphql`
-    query {
+    {
       featured: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/featured/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
+        sort: { fields: [frontmatter___date], order: ASC }
       ) {
         edges {
           node {
@@ -249,15 +316,13 @@ const Featured = () => {
               title
               cover {
                 childImageSharp {
-                  fluid(maxWidth: 700, traceSVG: { color: "#64ffda" }) {
-                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                  }
+                  gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
                 }
               }
               tech
               github
-              youtube
               external
+              cta
             }
             html
           }
@@ -267,10 +332,15 @@ const Featured = () => {
   `);
 
   const featuredProjects = data.featured.edges.filter(({ node }) => node);
-
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
     sr.reveal(revealTitle.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
@@ -278,73 +348,68 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Some Things I’ve Created
+        Some Things I’ve Built
       </h2>
 
-      <div>
+      <StyledProjectsGrid>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, youtube, cover } = frontmatter;
+            const { external, title, tech, github, cover, cta } = frontmatter;
+            const image = getImage(cover);
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
-                  <p className="project-overline">Featured Project</p>
-                  <h3 className="project-title">{title}</h3>
-                  <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+                  <div>
+                    <p className="project-overline">Featured Project</p>
 
-                  {tech.length && (
-                    <ul className="project-tech-list">
-                      {tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
-                    </ul>
-                  )}
+                    <h3 className="project-title">
+                      <a href={external}>{title}</a>
+                    </h3>
 
-                  <div className="project-links">
-                    {github && (
-                      <a
-                        href={github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub Link">
-                        <Icon name="GitHub" />
-                      </a>
+                    <div
+                      className="project-description"
+                      dangerouslySetInnerHTML={{ __html: html }}
+                    />
+
+                    {tech.length && (
+                      <ul className="project-tech-list">
+                        {tech.map((tech, i) => (
+                          <li key={i}>{tech}</li>
+                        ))}
+                      </ul>
                     )}
-                    {youtube && (
-                      <a
-                        href={youtube}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Youtube Link">
-                        <Icon name="Instagram" />
-                      </a>
-                    )}
-                    {external && (
-                      <a
-                        href={external}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="External Link">
-                        <Icon name="External" />
-                      </a>
-                    )}
+
+                    <div className="project-links">
+                      {cta && (
+                        <a href={cta} aria-label="Course Link" className="cta">
+                          Learn More
+                        </a>
+                      )}
+                      {github && (
+                        <a href={github} aria-label="GitHub Link">
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && !cta && (
+                        <a href={external} aria-label="External Link" className="external">
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
 
                 <div className="project-image">
-                  <a
-                    href={external ? external : github ? github : '#'}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <Img fluid={cover.childImageSharp.fluid} alt={title} className="img" />
+                  <a href={external ? external : github ? github : '#'}>
+                    <GatsbyImage image={image} alt={title} className="img" />
                   </a>
                 </div>
               </StyledProject>
             );
           })}
-      </div>
+      </StyledProjectsGrid>
     </section>
   );
 };
