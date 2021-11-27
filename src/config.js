@@ -1,18 +1,22 @@
 module.exports = {
-  email: 'kkadoya@wpi.edu',
+  email: 'brittany.chiang@gmail.com',
 
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/Kohmei358',
+      url: 'https://github.com/bchiang7',
     },
     {
       name: 'Instagram',
-      url: 'https://www.youtube.com/channel/UCPQjjXsCa4049JD2j2AXBcw',
+      url: 'https://www.instagram.com/bchiang7',
+    },
+    {
+      name: 'Twitter',
+      url: 'https://twitter.com/bchiang7',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/kohmei-kadoya-78363b18b/',
+      url: 'https://www.linkedin.com/in/bchiang7',
     },
     {
       name: 'Codepen',
@@ -24,6 +28,10 @@ module.exports = {
     {
       name: 'About',
       url: '/#about',
+    },
+    {
+      name: 'Experience',
+      url: '/#jobs',
     },
     {
       name: 'Work',

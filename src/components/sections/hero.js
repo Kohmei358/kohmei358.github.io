@@ -59,13 +59,20 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Kohmei Kadoya.</h2>;
-  const three = <h3 className="big-heading">I seamlessly integrate robotics and software.</h3>;
+  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
+  const three = <h3 className="big-heading">I build things for the web.</h3>;
   const four = (
-    <p>
-      I'm a software engineer with a focus on user experience and the seamless design and
-      integration of robotic systems into applications.
-    </p>
+    <>
+      <p>
+        I’m a software engineer specializing in building (and occasionally designing) exceptional
+        digital experiences. Currently, I’m focused on building accessible, human-centered products
+        at{' '}
+        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
+          Upstatement
+        </a>
+        .
+      </p>
+    </>
   );
   const five = (
     <a
