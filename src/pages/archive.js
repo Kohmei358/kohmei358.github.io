@@ -170,7 +170,7 @@ const ArchivePage = ({ location, data }) => {
             <tbody>
               {projects.length > 0 &&
                 projects.map(({ node }, i) => {
-                  const { date, github, external, ios, android, title, tech, company } =
+                  const { date, github, external, android, title, tech, company } =
                     node.frontmatter;
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -203,11 +203,6 @@ const ArchivePage = ({ location, data }) => {
                           {github && (
                             <a href={github} aria-label="GitHub Link">
                               <Icon name="GitHub" />
-                            </a>
-                          )}
-                          {ios && (
-                            <a href={ios} aria-label="Apple App Store Link">
-                              <Icon name="AppStore" />
                             </a>
                           )}
                           {android && (
@@ -248,8 +243,6 @@ export const pageQuery = graphql`
             tech
             github
             external
-            ios
-            android
             company
           }
           html
