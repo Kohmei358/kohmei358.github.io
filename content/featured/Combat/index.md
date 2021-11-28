@@ -1,7 +1,7 @@
 ---
 date: '6'
 title: 'Combat Robotics'
-cover: './demo.jpg'
+cover: './demo.png'
 tech:
   - Fusion 360 (CAD/CAM)
   - Design for manufacturing
