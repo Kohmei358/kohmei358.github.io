@@ -3,6 +3,8 @@ date: '0'
 title: 'Power Line Bird Deterrent Robot'
 cover: './demo.png'
 github: 'https://github.com/WPIBotOnAWire'
+external: 'https://www.newline.co/courses/build-a-spotify-connected-app'
+cta: 'https://www.newline.co/courses/build-a-spotify-connected-app'
 tech:
   - 3D Printing
   - ROS

@@ -1,5 +1,5 @@
 ---
-date: '6'
+date: '4'
 title: '6-DOF Arm Control Method'
 cover: './demo.png'
 github: 'https://github.com/Kohmei358/vr-controlled-robotics-arm'

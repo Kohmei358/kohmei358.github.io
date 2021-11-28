@@ -1,7 +1,7 @@
 ---
-date: '2'
+date: '6'
 title: 'BWH Hospital Application'
-cover: './demo.png'
+cover: './demo.jpg'
 youtube: 'https://youtu.be/84nr0pFNmIE'
 external: 'https://drive.google.com/drive/folders/1c--UZWTq3xuKoZ_w9xISf2z2UrIp0o7q'
 github: 'https://github.com/CS3733-C21-Team-U/CS3733-C21-Team-U-Project-BWApp'
