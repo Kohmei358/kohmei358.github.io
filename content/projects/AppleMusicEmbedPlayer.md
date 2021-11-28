@@ -1,14 +1,13 @@
 ---
-date: '2019-04-30'
-title: 'Custom Racing Quadcopter'
-ios: ''
-android: ''
+date: '2017-12-01'
+title: 'Apple Music Embeddable Web Player Widget'
+github: ''
+external: 'https://tools.applemusic.com/en-us'
 tech:
-  - Part Selection
-  - Soldering
-  - PID Tuning
-  - Wireless Video Transmission
-company: ''
+  - MusicKit.js
+  - JS
+  - SCSS
+company: 'Apple'
 showInProjects: true
 ---
 
