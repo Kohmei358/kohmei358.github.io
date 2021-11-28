@@ -6,7 +6,7 @@ github: 'https://github.com/bchiang7/halcyon-site'
 external: 'https://halcyon-theme.netlify.com/'
 tech:
   - VS Code
-  - Sublime Text
+  - Sublime Text2
   - Atom
   - iTerm2
   - Hyper
