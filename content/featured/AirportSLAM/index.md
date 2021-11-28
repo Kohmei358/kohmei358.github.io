@@ -1,7 +1,7 @@
 ---
 date: '2'
 title: 'Airport Obstacle Avoidance Robot'
-cover: './demo.jpg'
+cover: './demo.png'
 github: 'https://github.com/Kohmei358/2D-people-detection-dataset'
 youtube: 'https://youtu.be/QVfYstJa3Rk'
 tech:

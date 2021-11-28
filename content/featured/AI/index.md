@@ -1,7 +1,7 @@
 ---
-date: '7'
+date: '3'
 title: 'Lyft Motion Prediction Challenge'
-cover: './demo.jpg'
+cover: './demo.png'
 youtube: 'https://youtu.be/3YEYeSnwGt4'
 external: 'https://drive.google.com/file/d/1PddlkOxHE8ngnf2mRvBz1nbFDNou2SUj/view?usp=sharing'
 github: 'https://github.com/cs534-propagators/kaggle-lyft-motion-prediction'
