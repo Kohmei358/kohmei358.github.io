@@ -12,4 +12,4 @@ company: ''
 showInProjects: true
 ---
 
-Embeddable web player widget for Apple Music that lets users log in and listen to full song playback in the browser leveraging [MusicKit.js](https://developer.apple.com/documentation/musickitjs). Read more about this project on [9to5Mac](https://9to5mac.com/2018/06/03/apple-music-embeddable-web-player-listen-browser/).
+Started a VR Arcade company where users can rent out VR booths at an hourly rate. Each booth would have a headset along with a gaming PC and a library of VR games. Did market research, website creation and advertisement, and negotiations with a large arcade in Japan for real-estate.

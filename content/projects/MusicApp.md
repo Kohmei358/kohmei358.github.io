@@ -10,4 +10,4 @@ company: 'WPI'
 showInProjects: true
 ---
 
-Embeddable web player widget for Apple Music that lets users log in and listen to full song playback in the browser leveraging [MusicKit.js](https://developer.apple.com/documentation/musickitjs). Read more about this project on [9to5Mac](https://9to5mac.com/2018/06/03/apple-music-embeddable-web-player-listen-browser/).
+A simple React JS app to automatically generate a song based on melody played by the user. The tempo of the song is detected and a drum track and backing chords are generated and played in real time.

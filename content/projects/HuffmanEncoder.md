@@ -10,4 +10,4 @@ company: 'Stanford CS106B'
 showInProjects: true
 ---
 
-Embeddable web player widget for Apple Music that lets users log in and listen to full song playback in the browser leveraging [MusicKit.js](https://developer.apple.com/documentation/musickitjs). Read more about this project on [9to5Mac](https://9to5mac.com/2018/06/03/apple-music-embeddable-web-player-listen-browser/).
+A C++ program to perform lossless encoding and decoding on any string to reduce the file size by up to 80%. The idea is to assign variable-length codes to input characters where lengths of the assigned codes are based on the frequencies of corresponding characters.

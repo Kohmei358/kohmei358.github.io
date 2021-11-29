@@ -10,4 +10,4 @@ company: 'Williston'
 showInProjects: true
 ---
 
-Embeddable web player widget for Apple Music that lets users log in and listen to full song playback in the browser leveraging [MusicKit.js](https://developer.apple.com/documentation/musickitjs). Read more about this project on [9to5Mac](https://9to5mac.com/2018/06/03/apple-music-embeddable-web-player-listen-browser/).
+A video essay that answers the question "Why are detective mysteries so Popular?" Through the analysis of the Netflix show "Altered Carbon". 3 short stories by Edgar Allan Poe are considered and compared the TV show to highlight the influence of Poe in modern media.

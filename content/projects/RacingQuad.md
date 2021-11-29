@@ -12,4 +12,4 @@ company: ''
 showInProjects: true
 ---
 
-Embeddable web player widget for Apple Music that lets users log in and listen to full song playback in the browser leveraging [MusicKit.js](https://developer.apple.com/documentation/musickitjs). Read more about this project on [9to5Mac](https://9to5mac.com/2018/06/03/apple-music-embeddable-web-player-listen-browser/).
+Sourced parts for and assembled a racing quadcopter. Used a video was transmitted back to a FPV headset with 5.8GHz radio and has a flight time of a little under 10 minutes.

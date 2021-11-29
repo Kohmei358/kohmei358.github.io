@@ -11,4 +11,4 @@ tech:
 showInProjects: true
 ---
 
-A [Handshake](https://www.joinhandshake.com/)-like internship search website for [Stanford's Global Entrepreneurship Society](https://www.ases.stanford.edu).
+A [Handshake](https://www.joinhandshake.com/)-like internship search website for [Stanford's Global Entrepreneurship Society](https://www.ases.stanford.edu). A mobile-first design approach makes this React JS website easy to use on the go.

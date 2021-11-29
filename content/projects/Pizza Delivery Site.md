@@ -11,4 +11,4 @@ company: 'Harvard CSCI S-33a'
 showInProjects: true
 ---
 
-Embeddable web player widget for Apple Music that lets users log in and listen to full song playback in the browser leveraging [MusicKit.js](https://developer.apple.com/documentation/musickitjs). Read more about this project on [9to5Mac](https://9to5mac.com/2018/06/03/apple-music-embeddable-web-player-listen-browser/).
+A fully functional online pizza ordering website that allows customers to select items, pick toppings and place an order. Used HTML and CSS for the front-end and a Flask (Python) backend.

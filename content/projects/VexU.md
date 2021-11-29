@@ -12,4 +12,4 @@ company: 'WPI'
 showInProjects: true
 ---
 
-Embeddable web player widget for Apple Music that lets users log in and listen to full song playback in the browser leveraging [MusicKit.js](https://developer.apple.com/documentation/musickitjs). Read more about this project on [9to5Mac](https://9to5mac.com/2018/06/03/apple-music-embeddable-web-player-listen-browser/).
+WPI's VexU Robotics Competition Team. Managed the $27000+ annual budget as the treasurer. Lead a team to design, built, and programmed the 15 inch robot, which was 3D printed and CNCed, and used odometery and computer vision.
