@@ -61,7 +61,7 @@ const Contact = () => {
 
       <p>
         I'm actively looking for a summer 2022 internship and am willing to relocate anywhere in the
-        US. Please contact me if you think I could be a good fit for you team!
+        US. Please contact me if you think I could be a good fit for your team!
       </p>
 
       <a className="email-link" href={`mailto:${email}`}>

@@ -17,4 +17,4 @@ tech:
 showInProjects: true
 ---
 
-A research paper based on [Lyft's Motion Prediction Kaggle Competition](https://www.kaggle.com/c/lyft-motion-prediction-autonomous-vehicles/overview). Various deep leaning models are explored to computationally efficiency train on the largest publicly available [motion prediction dataset](https://self-driving.lyft.com/level5/data/).
+A research paper based on [Lyft's Motion Prediction Kaggle Competition](https://www.kaggle.com/c/lyft-motion-prediction-autonomous-vehicles/overview). Various deep learning models are explored to computationally efficiently train on the largest publicly available [motion prediction dataset](https://self-driving.lyft.com/level5/data/).

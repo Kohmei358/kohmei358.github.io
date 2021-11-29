@@ -12,5 +12,5 @@ tech:
 showInProjects: true
 ---
 
-A intuitive way to control a 6 degree-of-freedom robotic manipulator using a [HTC Vive VR controller](https://www.vive.com/us/accessory/controller/).
-The arm mimics the motion of your hand in real time and allows anyone to control a complex arm easily.
+An intuitive way to control a 6 degree-of-freedom robotic manipulator using an [HTC Vive VR controller](https://www.vive.com/us/accessory/controller/).
+The arm mimics the motion of your hand in real-time and allows anyone to control a complex arm easily.

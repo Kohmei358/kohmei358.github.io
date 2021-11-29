@@ -145,7 +145,7 @@ const About = () => {
 
             <p>
               I'm a student at <a href="https://www.wpi.edu">Worcester Polytechnic Institute</a>,
-              where I am pursuing a bachelors and a master in Robotics Engineering.
+              where I am pursuing a bachelor's and a master's in Robotics Engineering.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>

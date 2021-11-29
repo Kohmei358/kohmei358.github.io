@@ -14,4 +14,4 @@ tech:
 showInProjects: true
 ---
 
-A JavaFX application for use by [Brigham and Women's Hospital](https://www.brighamandwomens.org/) patients, employees, and administrators created for WPI's Software Engineering (CS3733) class. I used Agile Scrum methodology to lead a 11 person team to take this project from requirements gathering to user testing.
+A JavaFX application for use by [Brigham and Women's Hospital](https://www.brighamandwomens.org/) patients, employees, and administrators created for WPI's Software Engineering (CS3733) class. I used Agile Scrum methodology to lead an 11 person team to take this project from requirements gathering to user testing.

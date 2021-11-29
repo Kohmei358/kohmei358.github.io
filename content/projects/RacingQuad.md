@@ -12,4 +12,4 @@ company: ''
 showInProjects: true
 ---
 
-Sourced parts for and assembled a racing quadcopter. Used a video was transmitted back to a FPV headset with 5.8GHz radio and has a flight time of a little under 10 minutes.
+Sourced parts for and assembled a racing quadcopter. Used a video was transmitted back to an FPV headset with 5.8GHz radio and has a flight time of a little under 10 minutes.

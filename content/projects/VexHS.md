@@ -9,4 +9,4 @@ company: 'Williston'
 showInProjects: true
 ---
 
-Lead a high school Vex team where I managed a big group of students to build multiple competitive robot every year.
+Lead a high school Vex team where I managed a big group of students to build multiple competitive robots every year.

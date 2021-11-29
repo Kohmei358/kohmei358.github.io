@@ -13,4 +13,4 @@ tech:
 showInProjects: true
 ---
 
-An automated system to [discourage birds from congregating](https://www.capecod.com/newscenter/orleans-eversource-work-solve-cormorant-problem-cedar-pond/) on [Eversource's](https://www.eversource.com/) power lines. The drive train carries light and sound based deterrents and is able to operate for multiple days using a solar powered docking station. A web UI allows technicians to manage the fleet from anywhere.
+An automated system to [discourage birds from congregating](https://www.capecod.com/newscenter/orleans-eversource-work-solve-cormorant-problem-cedar-pond/) on [Eversource's](https://www.eversource.com/) power lines. The drive train carries light and sound-based deterrents and is able to operate for multiple days using a solar-powered docking station. A web UI allows technicians to manage the fleet from anywhere.

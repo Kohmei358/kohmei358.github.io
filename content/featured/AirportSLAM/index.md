@@ -13,4 +13,4 @@ tech:
 showInProjects: true
 ---
 
-Peeople detection and navigation for robots in crowded indoor enviroments. A deep learning model trained on 2d lidar data allows the robot perform safe and efficent point to point navigation.
+People detection and navigation for robots in crowded indoor environments. A deep learning model trained on 2d lidar data allows the robot to perform safe and efficient point-to-point navigation.
