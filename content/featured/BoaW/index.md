@@ -3,6 +3,7 @@ date: '0'
 title: 'Power Line Bird Deterrent Robot'
 cover: './demo5.png'
 github: 'https://github.com/WPIBotOnAWire'
+youtube: 'https://youtu.be/XLHi6i1_qCg'
 external: ''
 cta: ''
 tech:
