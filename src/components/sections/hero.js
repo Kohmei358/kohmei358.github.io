@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
@@ -68,9 +69,12 @@ const Hero = () => {
     </p>
   );
   const five = (
-    <a href={`mailto:${'kkadoya@wpi.edu'}`} className="email-link">
-      Get In Touch
-    </a>
+    // <a href={`mailto:${'kkadoya@wpi.edu'}`} className="email-link">
+    //   Get In Touch
+    // </a>
+    <Link className="email-link" to={'#projects'}>
+      {'See My Work'}
+    </Link>
   );
 
   const items = [one, two, three, four, five];

@@ -2,7 +2,7 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Kohmei Kadoya',
+    title: 'Kohmei Kadoya - Personal Portfolio',
     description:
       'Kohmei Kadoya is a roboitcs and software engineer based in Worcester, MA specializing in making robots simpler to interact with by creating simple and powerful software.',
     siteUrl: 'https://kohmeik.com', // No trailing slash allowed!
