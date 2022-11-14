@@ -9,11 +9,6 @@ import { Layout } from '@components';
 import { usePrefersReducedMotion } from '@hooks';
 import Design from '../components/design';
 
-const StyledMainContainer = styled.main`
-  ${({ theme }) => theme.mixins.flexCenter};
-  flex-direction: column;
-`;
-
 const designPage = ({ location }) => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();

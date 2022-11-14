@@ -7,18 +7,16 @@ import { usePrefersReducedMotion } from '@hooks';
 import DesignCard from './designCard';
 
 const StyledDesignSection = styled.section`
-  li {
-    list-style: none;
-    background-color: var(--green);
-    width: 300px;
-    height: 400px;
-    border: 1px solid black;
-    margin: 10px;
-  }
-
   ul {
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    // grid-gap: 15px;
+    // position: relative;
+    background-color: blue;
   }
 `;
 
@@ -28,6 +26,9 @@ const Design = () => {
       <ul>
         <DesignCard name="Name1"></DesignCard>
         <DesignCard name="Name2"></DesignCard>
+        <DesignCard name="Name3"></DesignCard>
+        <DesignCard name="Name3"></DesignCard>
+        <DesignCard name="Name3"></DesignCard>
         <DesignCard name="Name3"></DesignCard>
       </ul>
     </StyledDesignSection>

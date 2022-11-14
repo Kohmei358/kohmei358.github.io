@@ -7,9 +7,12 @@ import { usePrefersReducedMotion } from '@hooks';
 
 const StyledDesignCard = styled.section`
   background-color: ${props => (props.expanded ? 'var(--green)' : 'red')};
-  width: ${props => (props.expanded ? '600px' : '300px')};
+  // width: ${props => (props.expanded ? '600px' : '300px')};
   height: ${props => (props.expanded ? '400px' : '200px')};
   border: 1px solid black;
+  min-width: ${props => (props.expanded ? '90%' : '30%')};
+  max-width: ${props => (props.expanded ? '' : '50%')};
+  flex-grow: 1;
 `;
 
 const DesignCard = props => {
