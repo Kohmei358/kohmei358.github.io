@@ -1,26 +1,30 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledDesignCard = styled.section`
-  background-color: ${props => (props.expanded ? 'var(--green)' : 'red')};
-  // width: ${props => (props.expanded ? '600px' : '300px')};
-  height: ${props => (props.expanded ? '400px' : '200px')};
+  background-color: var(--navy);
+  // height: 168px;
   border: 1px solid black;
-  min-width: ${props => (props.expanded ? '90%' : '30%')};
-  max-width: ${props => (props.expanded ? '' : '50%')};
+  // min-width: 30%;
+  max-width: 30%;
+  // padding-top: 56.25%
   flex-grow: 1;
+  padding: 0;
 `;
 
 const DesignCard = props => {
-  const [expanded, setExpanded] = useState(false);
+  const { external, title, tech, github, youtube, cover, cta } = props.frontmatter;
+  const image = getImage(cover);
 
   return (
-    <StyledDesignCard expanded={expanded} onClick={() => setExpanded(!expanded)}>
-      {props.name + ' ' + expanded}
+    <StyledDesignCard onClick={() => props.setExpandedItemFunc(1)}>
+      <GatsbyImage critical image={image} alt={title} />
+      {/* {title} */}
     </StyledDesignCard>
   );
 };
