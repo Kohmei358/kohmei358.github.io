@@ -1,11 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { srConfig } from '@config';
-import sr from '@utils/sr';
-import { usePrefersReducedMotion } from '@hooks';
 import DesignCard from './designCard';
 import DesignModal from './designModal';
 

@@ -1,22 +1,31 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
-import { srConfig } from '@config';
-import sr from '@utils/sr';
-import { usePrefersReducedMotion } from '@hooks';
 
 const StyledDesignCard = styled.section`
-  display: ${props => (props.expandedItem === -1 ? 'none' : 'block')};
+  display: ${props => (props.expandedItem === -1 ? 'none' : 'flex')};
   ${({ theme }) => theme.mixins.boxShadow};
   position: fixed;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
   background-color: var(--light-navy);
   border-radius: var(--border-radius);
   height: 100%;
   width: 100%;
   // border: 1px solid black;
-  flex-grow: 1;
+
   z-index: 1;
+
+  .img {
+    height: 400px;
+  }
+
+  button {
+    ${({ theme }) => theme.mixins.smallButton};
+    margin-left: 15px;
+    font-size: var(--fz-xs);
+  }
 `;
 
 const DesignModal = props => {
@@ -26,7 +35,8 @@ const DesignModal = props => {
   return (
     <StyledDesignCard expandedItem={props.expandedItem}>
       <GatsbyImage class="img" image={image} alt={title} />
-      <h3>{title}</h3>
+      <br />
+      <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }}></div>
 
       <button onClick={() => props.closeFunc()}>Close</button>
