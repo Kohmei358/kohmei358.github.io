@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
@@ -11,14 +11,20 @@ const StyledDesignCard = styled.section`
   padding: 50px;
   background-color: var(--light-navy);
   border-radius: var(--border-radius);
-  height: 100%;
+  height: 700px;
   width: 100%;
   // border: 1px solid black;
+  overflow: scroll;
 
   z-index: 1;
 
-  .img {
+  .image {
+    width: 600px;
     height: 400px;
+  }
+
+  .text {
+    width: 600px;
   }
 
   button {
@@ -32,14 +38,25 @@ const DesignModal = props => {
   const { frontmatter, html } = props.data.node;
   const { external, title, tech, github, youtube, cover, cta } = frontmatter;
   const image = getImage(cover);
+
+  useEffect(() => {
+    console.log('Use effect!');
+    document.body.style.overflow = 'hidden';
+  });
+
   return (
     <StyledDesignCard expandedItem={props.expandedItem}>
-      <GatsbyImage class="img" image={image} alt={title} />
+      <button onClick={() => props.closeFunc()}>Close</button>
+      <div class="image">
+        <GatsbyImage class="img" image={image} alt={title} />{' '}
+      </div>
       <br />
       <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
-
-      <button onClick={() => props.closeFunc()}>Close</button>
+      <div class="text" dangerouslySetInnerHTML={{ __html: html }}></div>
+      <h1>{title}</h1>
+      <div class="text" dangerouslySetInnerHTML={{ __html: html }}></div>
+      <h1>{title}</h1>
+      <div class="text" dangerouslySetInnerHTML={{ __html: html }}></div>
     </StyledDesignCard>
   );
 };

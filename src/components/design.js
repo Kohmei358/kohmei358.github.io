@@ -20,6 +20,7 @@ const Design = () => {
   const [expandedItem, setExpandedItem] = useState(-1);
 
   const closeModal = () => {
+    document.body.style.overflow = 'visible';
     setExpandedItem(-1);
   };
 
@@ -67,7 +68,7 @@ const Design = () => {
           closeFunc={closeModal}></DesignModal>
       )}
 
-      <h1>A portfolio of my software experience design work:</h1>
+      <h1>(Under Development) A portfolio of my software experience design work:</h1>
       <ul>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
