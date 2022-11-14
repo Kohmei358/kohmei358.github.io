@@ -67,7 +67,7 @@ const Design = () => {
   return (
     <StyledDesignSection>
       <DesignModal name="Name4" expandedItem={expandedItem} closeFunc={closeModal}></DesignModal>
-
+      <h1>A portfolio of my software experience design work:</h1>
       <ul>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
