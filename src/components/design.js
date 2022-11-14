@@ -11,14 +11,12 @@ import DesignModal from './designModal';
 
 const StyledDesignSection = styled.section`
   ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 0px;
+    padding: 10px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
     padding: 0;
-    // display: grid;
-    // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    // grid-gap: 15px;
-    // position: relative;
     // background-color: blue;
   }
 `;
@@ -62,11 +60,18 @@ const Design = () => {
   `);
 
   const featuredProjects = data.featured.edges.filter(({ node }) => node);
-  const revealProjects = useRef([]);
 
+  // console.log(featuredProjects);
+  let dataForModal = featuredProjects[expandedItem];
   return (
     <StyledDesignSection>
-      <DesignModal name="Name4" expandedItem={expandedItem} closeFunc={closeModal}></DesignModal>
+      {dataForModal && (
+        <DesignModal
+          data={dataForModal}
+          expandedItem={expandedItem}
+          closeFunc={closeModal}></DesignModal>
+      )}
+
       <h1>A portfolio of my software experience design work:</h1>
       <ul>
         {featuredProjects &&
@@ -74,10 +79,11 @@ const Design = () => {
             const { frontmatter, html } = node;
             return (
               <DesignCard
+                html={html}
                 frontmatter={frontmatter}
                 setExpandedItemFunc={setExpandedItemFunc}
-                key={i}
-                ref={el => (revealProjects.current[i] = el)}></DesignCard>
+                index={i}
+                key={i}></DesignCard>
             );
           })}
       </ul>

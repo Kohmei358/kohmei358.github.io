@@ -7,14 +7,31 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledDesignCard = styled.section`
-  background-color: var(--navy);
+  ${({ theme }) => theme.mixins.boxShadow};
+  background-color: var(--lightest-navy);
+  border-radius: var(--border-radius);
   // height: 168px;
-  border: 1px solid black;
-  // min-width: 30%;
-  max-width: 30%;
+  // min-width: 50%;
+  // max-width: 50%;
   // padding-top: 56.25%
-  flex-grow: 1;
-  padding: 0;
+  // flex-grow: 1;
+  // flex-shrink: 1;
+  padding: 10px;
+
+  &:hover {
+    background-color: var(--light-navy);
+    .img {
+      // mix-blend-mode: normal;
+    }
+  }
+
+  .img {
+    // mix-blend-mode: screen;
+  }
+
+  h3 {
+    margin-top: 10px;
+  }
 `;
 
 const DesignCard = props => {
@@ -22,9 +39,10 @@ const DesignCard = props => {
   const image = getImage(cover);
 
   return (
-    <StyledDesignCard onClick={() => props.setExpandedItemFunc(1)}>
-      <GatsbyImage critical image={image} alt={title} />
-      {/* {title} */}
+    <StyledDesignCard onClick={() => props.setExpandedItemFunc(props.index)}>
+      <GatsbyImage class="img" image={image} alt={title} />
+      <h3>{title}</h3>
+      <div dangerouslySetInnerHTML={{ __html: props.html }}></div>
     </StyledDesignCard>
   );
 };
