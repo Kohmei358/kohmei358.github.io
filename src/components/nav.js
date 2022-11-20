@@ -42,6 +42,7 @@ const StyledHeader = styled.header`
         background-color: rgba(10, 25, 47, 0.85);
         box-shadow: 0 10px 30px -10px var(--navy-shadow);
       `};
+    ${props => console.log(props.isDesign)}
     ${props =>
       props.scrollDirection === 'down' &&
       !props.scrolledToTop &&
