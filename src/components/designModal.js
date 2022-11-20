@@ -37,10 +37,18 @@ const StyledDesignCard = styled.section`
     // border: 2px solid var(--green);
     border-radius: var(--border-radius);
     height: calc(100vh - 150px);
-    // width: 100%;
+
+    max-width: 800px;
+
+    width: auto;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     // border: 1px solid black;
     overflow-y: scroll;
+    overflow-x: hidden;
     z-index: 1;
+    flex-shrink: 1;
 
     /* Scrollbar Styles */
     html {
@@ -61,12 +69,12 @@ const StyledDesignCard = styled.section`
   }
 
   .image {
-    width: 600px;
-    height: 400px;
+    max-width: 600px;
+    max-height: 400px;
   }
 
   .text {
-    width: 600px;
+    // width: 600px;
   }
 
 
