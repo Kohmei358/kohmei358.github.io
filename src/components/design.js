@@ -10,7 +10,7 @@ const StyledDesignSection = styled.section`
     margin: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 10px;
+    gap: 20px;
     padding: 0;
     // background-color: blue;
   }

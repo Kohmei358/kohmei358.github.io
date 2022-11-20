@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledDesignCard = styled.section`
   ${({ theme }) => theme.mixins.boxShadow};
-  background-color: var(--lightest-navy);
+  background-color: var(--light-navy);
   border-radius: var(--border-radius);
   // height: 168px;
   // min-width: 50%;
@@ -12,10 +12,13 @@ const StyledDesignCard = styled.section`
   // padding-top: 56.25%
   // flex-grow: 1;
   // flex-shrink: 1;
-  padding: 10px;
+  padding: 0;
+
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: var(--light-navy);
+    transform: scale(1.05);
+    // background-color: var(--light-navy);
     .img {
       // mix-blend-mode: normal;
     }
@@ -23,10 +26,24 @@ const StyledDesignCard = styled.section`
 
   .img {
     // mix-blend-mode: screen;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    // margin-bottom: -1px;
   }
 
   h3 {
-    margin-top: 10px;
+    // margin-top: 10px;
+  }
+
+  .textContainer {
+    padding: 20px;
+    border-top: 2px solid var(--green);
+  }
+
+  .bodyText {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 `;
 
@@ -37,8 +54,10 @@ const DesignCard = props => {
   return (
     <StyledDesignCard onClick={() => props.setExpandedItemFunc(props.index)}>
       <GatsbyImage class="img" image={image} alt={title} />
-      <h3>{title}</h3>
-      <div dangerouslySetInnerHTML={{ __html: props.html }}></div>
+      <div class="textContainer">
+        <h4>{title}</h4>
+        <div class="bodyText" dangerouslySetInnerHTML={{ __html: props.html }}></div>
+      </div>
     </StyledDesignCard>
   );
 };

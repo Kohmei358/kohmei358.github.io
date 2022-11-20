@@ -10,13 +10,31 @@ const StyledDesignCard = styled.section`
   align-items: center;
   padding: 50px;
   background-color: var(--light-navy);
+  // background-color: white;
+  // border: 2px solid var(--green);
   border-radius: var(--border-radius);
-  height: 700px;
+  height: 90%;
   width: 100%;
   // border: 1px solid black;
-  overflow: scroll;
-
+  overflow-y: scroll;
   z-index: 1;
+
+  /* Scrollbar Styles */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--dark-slate) transparent);
+  }
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--dark-slate);
+    border: 3px solid var(--light-navy);
+    border-radius: 10px;
+  }
 
   .image {
     width: 600px;
