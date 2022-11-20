@@ -11,7 +11,8 @@ const StyledDesignCard = styled.section`
   position: fixed;
   // margin: -10px;
   // padding: -10px;
-  top: 100px;
+  // top: 100px;
+  top: 0;
   // left: -10px;
   width: 100%;
   // max-width: 1020px;
@@ -29,6 +30,7 @@ const StyledDesignCard = styled.section`
     position: fixed;
     flex-direction: column;
     align-items: top;
+    margin-top: 100px;
     padding: 50px;
     background-color: var(--light-navy);
     // background-color: white;
