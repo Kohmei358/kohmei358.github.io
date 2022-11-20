@@ -35,7 +35,6 @@ const StyledHeader = styled.header`
     ${props =>
       props.scrollDirection === 'up' &&
       !props.scrolledToTop &&
-      !props.isDesign &&
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
@@ -45,7 +44,6 @@ const StyledHeader = styled.header`
     ${props =>
       props.scrollDirection === 'down' &&
       !props.scrolledToTop &&
-      !props.isDesign &&
       css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
