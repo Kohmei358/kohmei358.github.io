@@ -1,39 +1,61 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import { useOnClickOutside } from '@hooks';
+import { Icon } from '@components/icons';
 
 const StyledDesignCard = styled.section`
-  display: ${props => (props.expandedItem === -1 ? 'none' : 'flex')};
-  ${({ theme }) => theme.mixins.boxShadow};
+  // background-color: rgba(100, 0, 0, 0.85);
+  background-color: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(5px);
   position: fixed;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px;
-  background-color: var(--light-navy);
-  // background-color: white;
-  // border: 2px solid var(--green);
-  border-radius: var(--border-radius);
-  height: 90%;
+  // margin: -10px;
+  // padding: -10px;
+  top: 100px;
+  // left: -10px;
   width: 100%;
-  // border: 1px solid black;
-  overflow-y: scroll;
-  z-index: 1;
+  // max-width: 1020px;
+  height: 100%;
+  max-height: 100%;
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  padding: 0;
 
-  /* Scrollbar Styles */
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--dark-slate) transparent);
-  }
-  ::-webkit-scrollbar {
-    width: 12px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--dark-slate);
-    border: 3px solid var(--light-navy);
-    border-radius: 10px;
+  .content {
+    display: ${props => (props.expandedItem === -1 ? 'none' : 'flex')};
+    ${({ theme }) => theme.mixins.boxShadow};
+    position: fixed;
+    flex-direction: column;
+    align-items: top;
+    padding: 50px;
+    background-color: var(--light-navy);
+    // background-color: white;
+    // border: 2px solid var(--green);
+    border-radius: var(--border-radius);
+    height: calc(100vh - 150px);
+    // width: 100%;
+    // border: 1px solid black;
+    overflow-y: scroll;
+    z-index: 1;
+
+    /* Scrollbar Styles */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: var(--dark-slate) transparent);
+    }
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--dark-slate);
+      border: 3px solid var(--light-navy);
+      border-radius: 10px;
+    }
   }
 
   .image {
@@ -45,10 +67,21 @@ const StyledDesignCard = styled.section`
     width: 600px;
   }
 
+
   button {
-    ${({ theme }) => theme.mixins.smallButton};
-    margin-left: 15px;
-    font-size: var(--fz-xs);
+    background: transparent;
+
+    svg {
+      stroke: var(--light-slate);
+      fill: var(--light-slate);
+      &:hover,
+      &:focus {
+        stroke: var(--green);
+        fill: var(--green);
+      }
+      width: 36px;
+      height: 36px;
+    }
   }
 `;
 
@@ -62,19 +95,26 @@ const DesignModal = props => {
     document.body.style.overflow = 'hidden';
   });
 
+  const wrapperRef = useRef(null);
+  useOnClickOutside(wrapperRef, () => props.closeFunc());
+
   return (
     <StyledDesignCard expandedItem={props.expandedItem}>
-      <button onClick={() => props.closeFunc()}>Close</button>
-      <div class="image">
-        <GatsbyImage class="img" image={image} alt={title} />{' '}
+      <div className="content" ref={wrapperRef}>
+        <button onClick={() => props.closeFunc()}>
+          <Icon name="Close" />
+        </button>
+        <div className="image">
+          <GatsbyImage class="img" image={image} alt={title} />{' '}
+        </div>
+        <br />
+        <h1>{title}</h1>
+        <div className="text" dangerouslySetInnerHTML={{ __html: html }}></div>
+        <h1>{title}</h1>
+        <div className="text" dangerouslySetInnerHTML={{ __html: html }}></div>
+        <h1>{title}</h1>
+        <div className="text" dangerouslySetInnerHTML={{ __html: html }}></div>
       </div>
-      <br />
-      <h1>{title}</h1>
-      <div class="text" dangerouslySetInnerHTML={{ __html: html }}></div>
-      <h1>{title}</h1>
-      <div class="text" dangerouslySetInnerHTML={{ __html: html }}></div>
-      <h1>{title}</h1>
-      <div class="text" dangerouslySetInnerHTML={{ __html: html }}></div>
     </StyledDesignCard>
   );
 };

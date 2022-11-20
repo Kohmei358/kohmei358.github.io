@@ -11,8 +11,11 @@ const StyledDesignSection = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 0;
     // background-color: blue;
+  }
+
+  h1 {
+    padding: 10px;
   }
 `;
 

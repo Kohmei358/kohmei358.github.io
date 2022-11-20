@@ -53,10 +53,10 @@ const DesignCard = props => {
 
   return (
     <StyledDesignCard onClick={() => props.setExpandedItemFunc(props.index)}>
-      <GatsbyImage class="img" image={image} alt={title} />
-      <div class="textContainer">
+      <GatsbyImage className="img" image={image} alt={title} />
+      <div className="textContainer">
         <h4>{title}</h4>
-        <div class="bodyText" dangerouslySetInnerHTML={{ __html: props.html }}></div>
+        <div className="bodyText" dangerouslySetInnerHTML={{ __html: props.html }}></div>
       </div>
     </StyledDesignCard>
   );

@@ -33,18 +33,19 @@ const StyledHeader = styled.header`
 
   @media (prefers-reduced-motion: no-preference) {
     ${props =>
-    props.scrollDirection === 'up' &&
+      props.scrollDirection === 'up' &&
       !props.scrolledToTop &&
+      !props.isDesign &&
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
         background-color: rgba(10, 25, 47, 0.85);
         box-shadow: 0 10px 30px -10px var(--navy-shadow);
       `};
-
     ${props =>
-    props.scrollDirection === 'down' &&
+      props.scrollDirection === 'down' &&
       !props.scrolledToTop &&
+      !props.isDesign &&
       css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
@@ -127,11 +128,14 @@ const StyledLinks = styled.div`
   }
 `;
 
-const Nav = ({ isHome }) => {
+const Nav = ({ isHome, isDesign }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
+
+  // console.log('Help');
+  // console.log(isDesign);
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
@@ -179,12 +183,14 @@ const Nav = ({ isHome }) => {
   );
 
   return (
-    <StyledHeader scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
+    <StyledHeader
+      scrollDirection={scrollDirection}
+      scrolledToTop={scrolledToTop}
+      isDesign={isDesign}>
       <StyledNav>
         {prefersReducedMotion ? (
           <>
             {Logo}
-
             <StyledLinks>
               <ol>
                 {navLinks &&
@@ -196,7 +202,6 @@ const Nav = ({ isHome }) => {
               </ol>
               <div>{ResumeLink}</div>
             </StyledLinks>
-
             <Menu />
           </>
         ) : (
@@ -208,7 +213,6 @@ const Nav = ({ isHome }) => {
                 </CSSTransition>
               )}
             </TransitionGroup>
-
             <StyledLinks>
               <ol>
                 <TransitionGroup component={null}>
@@ -234,7 +238,6 @@ const Nav = ({ isHome }) => {
                 )}
               </TransitionGroup>
             </StyledLinks>
-
             <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition classNames={fadeClass} timeout={timeout}>
@@ -251,6 +254,7 @@ const Nav = ({ isHome }) => {
 
 Nav.propTypes = {
   isHome: PropTypes.bool,
+  isDesign: PropTypes.bool,
 };
 
 export default Nav;
