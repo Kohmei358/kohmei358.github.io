@@ -30,8 +30,8 @@ const StyledDesignCard = styled.section`
     // margin-bottom: -1px;
   }
 
-  h3 {
-    // margin-top: 10px;
+  h2 {
+    font-size: var(--fz-x);
   }
 
   .textContainer {
@@ -55,8 +55,8 @@ const DesignCard = props => {
     <StyledDesignCard onClick={() => props.setExpandedItemFunc(props.index)}>
       <GatsbyImage className="img" image={image} alt={title} />
       <div className="textContainer">
-        <h4>{title}</h4>
-        <div className="bodyText" dangerouslySetInnerHTML={{ __html: props.html }}></div>
+        <h2>{title}</h2>
+        <p className="bodyText" dangerouslySetInnerHTML={{ __html: props.html }}></p>
       </div>
     </StyledDesignCard>
   );

@@ -118,11 +118,9 @@ const DesignModal = props => {
           <GatsbyImage class="img" image={image} alt={title} />{' '}
         </div>
         <br />
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         <div className="text" dangerouslySetInnerHTML={{ __html: html }}></div>
-        <h1>{title}</h1>
         <div className="text" dangerouslySetInnerHTML={{ __html: html }}></div>
-        <h1>{title}</h1>
         <div className="text" dangerouslySetInnerHTML={{ __html: html }}></div>
       </div>
     </StyledDesignCard>
