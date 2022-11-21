@@ -12,6 +12,4 @@ tech:
 showInProjects: true
 ---
 
-A [Handshake](https://www.joinhandshake.com/)-like internship search website for [Stanford's Global Entrepreneurship Society](https://www.ases.stanford.edu).
-Overhauls the application process for students applying to internships through the club and acts as
-a simple resume management system for employers.
+A [Handshake](https://www.joinhandshake.com/)-like internship search website for [Stanford's Global Entrepreneurship Society](https://www.ases.stanford.edu). Overhauls the application process for students applying to internships through the club and acts as a simple resume management system for employers.

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+  IconClose,
   IconAppStore,
   IconBookmark,
   IconCodepen,
@@ -47,6 +48,8 @@ const Icon = ({ name }) => {
       return <IconStar />;
     case 'Twitter':
       return <IconTwitter />;
+    case 'Close':
+      return <IconClose />;
     default:
       return <IconExternal />;
   }

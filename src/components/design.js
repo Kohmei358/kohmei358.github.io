@@ -1,25 +1,21 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { srConfig } from '@config';
-import sr from '@utils/sr';
-import { usePrefersReducedMotion } from '@hooks';
 import DesignCard from './designCard';
 import DesignModal from './designModal';
 
 const StyledDesignSection = styled.section`
   ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 0px;
-    padding: 0;
-    // display: grid;
-    // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    // grid-gap: 15px;
-    // position: relative;
+    padding: 10px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     // background-color: blue;
+  }
+
+  h1 {
+    padding: 10px;
   }
 `;
 
@@ -27,6 +23,7 @@ const Design = () => {
   const [expandedItem, setExpandedItem] = useState(-1);
 
   const closeModal = () => {
+    document.body.style.overflow = 'visible';
     setExpandedItem(-1);
   };
 
@@ -62,22 +59,30 @@ const Design = () => {
   `);
 
   const featuredProjects = data.featured.edges.filter(({ node }) => node);
-  const revealProjects = useRef([]);
 
+  // console.log(featuredProjects);
+  let dataForModal = featuredProjects[expandedItem];
   return (
     <StyledDesignSection>
-      <DesignModal name="Name4" expandedItem={expandedItem} closeFunc={closeModal}></DesignModal>
+      {dataForModal && (
+        <DesignModal
+          data={dataForModal}
+          expandedItem={expandedItem}
+          closeFunc={closeModal}></DesignModal>
+      )}
 
+      <h1>(Under Development) A portfolio of my software experience design work:</h1>
       <ul>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
             return (
               <DesignCard
+                html={html}
                 frontmatter={frontmatter}
                 setExpandedItemFunc={setExpandedItemFunc}
-                key={i}
-                ref={el => (revealProjects.current[i] = el)}></DesignCard>
+                index={i}
+                key={i}></DesignCard>
             );
           })}
       </ul>
